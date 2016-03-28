@@ -1,0 +1,19 @@
+<body>
+<div class="container">
+<div class="row">
+
+<div style="position: fixed;right: 100px; top: 55px;">
+<a href="#/myrecipes/new" ng-click="addRecipe()" class="btn btn-primary btn-sm">Добавить рецепт</a>
+</div>
+
+<div ng-repeat="recipe in arrStorage">
+    <div class="col-md-6">
+      <h2 ng-bind-html="recipe.title"></h2>
+      <h4 ng-bind="recipe.description | limitTo : 200 | dots"></h4>
+      <a class="btn btn-default" href="#/myrecipes/{{$index}}">Посмотреть рецепт</a>  
+    </div>
+</div>
+    
+</div>
+</div>
+</body>

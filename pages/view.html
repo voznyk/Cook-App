@@ -1,0 +1,39 @@
+<div>
+<h2 ng-bind-html="recipe.title" ng-model="mainObj.title"></h2> 
+ <div>
+    <img src="{{recipe.photoUrl}}" alt="" ng-model="mainObj.photoUrl">
+ </div>
+
+<br>
+<span ng-if="!hide">Поместить рецепт в:</span>
+
+<div class="btn-group" role="group">
+<button class="btn btn-primary" ng-disabled="isFavorite" ng-model="isFavorite" ng-if="!hide" ng-click="saveForFavorite()">Избранное</button>
+<button class="btn btn-primary" ng-disabled="isShoping"  ng-model="isShoping"  ng-if="!hide" ng-click="saveForShoping()">Покупки</button>
+<button class="btn btn-primary" ng-disabled="isPlanned"  ng-model="isPlanned"  ng-if="!hide" ng-click="saveForPlanned()">План</button>
+</div>
+
+<div class="btn-group">
+<a href="#/myrecipes" class="btn btn-primary btn-lg"  ng-if="hide;lists" ng-click="saveFromGallery()">Сохранить</a>
+<a href="#/myrecipes/edit" class="btn btn-primary" style="left: 475px;" ng-if="!hide" ng-click="edit()">Изменить</a>
+</div>
+
+<hr>
+<p ng-bind-html="recipe.description" ng-model="mainObj.description"></p>
+
+<hr>
+<ul>
+    <li ng-repeat="ingredient in recipe.ingredients track by $index" ng-bind-html="ingredient"></li>
+</ul>
+
+<hr>
+<p ng-bind-html="recipe.instruction"></p>
+
+</div>
+
+
+
+
+
+
+   

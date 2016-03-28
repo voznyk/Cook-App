@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <title>app</title>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="lib/angular.js"></script>
+    <script src="lib/angular-route.js"></script>
+    <script src="lib/angular-animate.js"></script>
+    <script src="lib/angular-sanitize.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/service.js"></script>
+    <script src="js/filtres.js"></script>   
+</head>
+
+<body>
+<header>       
+ <div class="row">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <a href="#/" class="navbar-header"> 
+              <h3 style="color: #999999">Рецепты</h3>
+            </a>
+            <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a  href="#/ideas"><i></i>Идеи</a></li>
+                <li><a  href="#/myrecipes"><i></i>Мои Рецепты</a></li>
+                <li><a  href="#/lists/{{$index}}"><i></i>Списки</a></li> 
+            </ul>
+            </div>
+        </div>
+    </nav>  
+ </div>
+</header>
+
+<div class="container">
+    <div ng-view></div>
+</div>
+
+</body>
+</html>

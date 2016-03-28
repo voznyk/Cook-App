@@ -1,0 +1,50 @@
+
+<legend><h1>Новый рецепт</h1></legend>
+<form name="frm">
+
+<fieldset class="form-group">
+      <label class="col-lg-2 control-label">Название</label>
+      <div class="col-lg-5">
+        <input type="text" class="form-control" ng-model="mainObj.title" ng-maxlength="200" required>
+      </div>
+</fieldset>
+
+<fieldset class="form-group">
+     <label for="textArea" class="col-lg-2 control-label">Описание</label>
+     <div class="col-lg-5">
+       <textarea class="form-control" rows="7" ng-model="mainObj.description" ng-maxlength="2000" required></textarea>
+     </div>
+</fieldset>
+
+<fieldset class="form-group"> 
+      <label  class="col-lg-2 control-label">Фотография</label>
+      <div class="col-lg-5">
+        <input type="url" class="form-control" placeholder="http://" ng-model="mainObj.photoUrl"  ng-maxlength="200" required>
+      </div>
+</fieldset>
+
+<fieldset class="form-group">
+      <label  class="col-lg-2 control-label">Ингредиенты</label>
+      <div class="col-lg-5">
+    <input style="margin-bottom: 5px;" type="text" class="form-control" placeholder="Название и количество" ng-repeat="ingredient in mainObj.ingredients track by $index" 
+    ng-model="mainObj.ingredients[$index]" ng-bind-html="ingredient" ng-maxlength="100" required>  
+         <a class="btn btn-xs btn-primary" ng-click="addIngredient()">добавить</a> 
+      </div>
+</fieldset>     
+      
+<fieldset class="form-group">
+      <label for="textArea" class="col-lg-2 control-label">Инструкция</label>
+      <div class="col-lg-5">
+        <textarea class="form-control" rows="7" ng-model="mainObj.instruction" ng-maxlength="10000" required></textarea>
+      </div>
+</fieldset>
+ 
+ <a ng-href="#/myrecipes"><button class="btn btn-primary" ng-disabled="frm.$invalid" ng-model="isTrue" ng-click="saveStorage()">Сохранить</button></a>
+
+</form>
+</body>
+
+
+
+
+
